@@ -1,0 +1,88 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aas-core3.0-protobuf"
+# NOTE (mristin):
+# Do not forget to sync with __init__.py!
+version = "0.0.1"
+
+description = "Convert Asset Administration Shells V3.0 between Python and ProtoBuf objects."
+readme = "README.md"
+requires-python = ">=3.8"
+
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+authors = [
+    { name = "Marko Ristin", email = "marko@ristin.ch" }
+]
+
+dependencies = [
+    "aas-core3.0>=1,<2",
+    "protobuf>=5"
+]
+
+[project.urls]
+repository = "https://github.com/aas-core-works/aas-core3.0-python-protobuf"
+
+license = "MIT"
+
+[tool.setuptools.packages.find]
+include = ["aas_core3_protobuf"]
+exclude = ["precommit.py"]
+
+# Development dependencies
+[tool]
+[tool.black]
+line-length = 88
+
+[tool.pylint]
+disable = [
+    "too-many-locals",
+    "no-member",
+    "duplicate-code",
+    "too-many-return-statements",
+    "too-many-branches",
+    "too-many-statements",
+    "too-many-lines",
+    "too-many-public-methods",
+    "too-few-public-methods",
+    "no-else-raise",
+    "line-too-long"
+]
+ignore-paths = [
+  '^aas_core3_protobuf/types_pb2.*$'
+]
+
+[tool.mypy]
+python_version = "3.8"
+strict = true
+
+[[tool.mypy.overrides]]
+module = "aas_core3_protobuf.types_pb2"
+ignore_errors = true
+
+[project.optional-dependencies]
+dev = [
+    "black==24.8.0",
+    "pylint==3.2.7",
+    "mypy==1.5.1",
+    "coverage>=7,<8",
+    "aas-core-meta@git+https://github.com/aas-core-works/aas-core-meta@f9cbdb3#egg=aas-core-meta",
+    "aas-core-codegen@git+https://github.com/aas-core-works/aas-core-codegen@f0f0925c#egg=aas-core-codegen",
+    # NOTE (mristin):
+    # We need at least aas-core3.0 1.1.0 for the general XML de-serialization in
+    # the test code.
+    "aas-core3.0>=1.1.0,<2",
+    "types-protobuf==5.28.3.20241030"
+]
