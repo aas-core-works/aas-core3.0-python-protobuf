@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "aas-core3.0-protobuf"
 # NOTE (mristin):
 # Do not forget to sync with __init__.py!
-version = "0.0.1"
+version = "0.0.2"
 
 description = "Convert Asset Administration Shells V3.0 between Python and ProtoBuf objects."
 readme = "README.md"
