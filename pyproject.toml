@@ -35,8 +35,6 @@ dependencies = [
 [project.urls]
 repository = "https://github.com/aas-core-works/aas-core3.0-python-protobuf"
 
-license = "MIT"
-
 [tool.setuptools.packages.find]
 include = ["aas_core3_protobuf"]
 exclude = ["precommit.py"]
@@ -71,18 +69,3 @@ strict = true
 [[tool.mypy.overrides]]
 module = "aas_core3_protobuf.types_pb2"
 ignore_errors = true
-
-[project.optional-dependencies]
-dev = [
-    "black==24.8.0",
-    "pylint==3.2.7",
-    "mypy==1.5.1",
-    "coverage>=7,<8",
-    "aas-core-meta@git+https://github.com/aas-core-works/aas-core-meta@f9cbdb3#egg=aas-core-meta",
-    "aas-core-codegen@git+https://github.com/aas-core-works/aas-core-codegen@f0f0925c#egg=aas-core-codegen",
-    # NOTE (mristin):
-    # We need at least aas-core3.0 1.1.0 for the general XML de-serialization in
-    # the test code.
-    "aas-core3.0>=1.1.0,<2",
-    "types-protobuf==5.28.3.20241030"
-]
