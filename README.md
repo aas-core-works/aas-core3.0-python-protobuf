@@ -1,5 +1,9 @@
 # aas-core3.0-python-protobuf
-Convert Asset Administration Shells V3.0 between Python and ProtoBuf objects.
+
+[![CI](https://github.com/aas-core-works/aas-core3.0-python-protobuf/actions/workflows/ci.yml/badge.svg)](https://github.com/aas-core-works/aas-core3.0-python-protobuf/actions/workflows/ci.yml)
+[![Test Coverage](https://coveralls.io/repos/github/aas-core-works/aas-core3.0-python-protobuf/badge.svg?branch=main)](https://coveralls.io/github/aas-core-works/aas-core3.0-python-protobuf?branch=main)
+[![PyPI - Version](https://badge.fury.io/py/aas-core3.0-protobuf.svg)](https://pypi.org/project/aas-core3.0-protobuf/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/aas-core3.0-protobuf.svg)](https://pypi.org/project/aas-core3.0-protobuf/)
 
 This is a library to convert Asset Administration Shells V3.0 between Python and ProtoBuf objects.
 
